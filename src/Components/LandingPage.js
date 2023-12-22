@@ -34,6 +34,12 @@ const useStyles = makeStyles({
             borderRadius: "15px",
             backgroundColor: "white"
         },
+        "& .css-2bxn45, .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-1jg2gny, .MuiInputBase-input.MuiFilledInput-input.css-2bxn45": {
+            background: "white !important",
+            boxShadow: "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+            borderRadius: "15px",
+            backgroundColor: "white"
+        },
         "& .css-2y464i-MuiInputBase-root-MuiFilledInput-root::before, .css-2y464i-MuiInputBase-root-MuiFilledInput-root::after": {
             border: "none !important"
         },
@@ -42,6 +48,9 @@ const useStyles = makeStyles({
             fontWeight: 800,
             paddingLeft: "0 !important",
             paddingRight: "0 !important",
+        },
+        "& .css-1jg2gny::before, .css-1jg2gny::after, .css-1jg2gny:hover:not(.Mui-disabled, .Mui-error)::before": {
+            border: "none !important"
         },
         
     },
