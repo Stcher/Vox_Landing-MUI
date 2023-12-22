@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Vox_Landing-MUI/static/css/main.e6c13ad2.css",
+    "main.js": "/Vox_Landing-MUI/static/js/main.c606bf2c.js",
+    "static/media/screen.png": "/Vox_Landing-MUI/static/media/screen.cffe7f0d959e37c9be93.png",
+    "static/media/girlBack.png": "/Vox_Landing-MUI/static/media/girlBack.81ba0a0a1ae09fde3037.png",
+    "static/media/tick-circle.png": "/Vox_Landing-MUI/static/media/tick-circle.bbe114efb0097a0e8198.png",
+    "static/media/img Comm.png": "/Vox_Landing-MUI/static/media/img Comm.b42facede2c8d095765d.png",
+    "static/media/tick-circle_mob.png": "/Vox_Landing-MUI/static/media/tick-circle_mob.46b788a01c2d6243c20c.png",
+    "index.html": "/Vox_Landing-MUI/index.html",
+    "main.e6c13ad2.css.map": "/Vox_Landing-MUI/static/css/main.e6c13ad2.css.map",
+    "main.c606bf2c.js.map": "/Vox_Landing-MUI/static/js/main.c606bf2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c606bf2c.js"
+  ]
+}
