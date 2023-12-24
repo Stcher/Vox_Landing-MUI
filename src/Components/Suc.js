@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 
     formBtns: {
         "& .css-tmesg1-MuiButtonBase-root-MuiButton-root": {
-            width: "-moz-available",
+            width: "100% !important",
             boxShadow: 2,
             borderRadius: "15px",
             backgroundColor: "white",
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
         fontWeight: 800,
         paddingLeft: 0,
         paddingRight: 0,
-        width: "-moz-available !important",
+        width: "100% !important",
         boxShadow: "2px !important",
         borderRadius: "15px !important",
         backgroundColor: "white !important",

@@ -26,62 +26,65 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 
 
-const useStyles = makeStyles({
-    root: {
-        "& .css-2y464i-MuiInputBase-root-MuiFilledInput-root": {
-            background: "white !important",
-            boxShadow: "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-            borderRadius: "15px",
-            backgroundColor: "white"
+const useStyles = makeStyles((theme) => {
+    return {
+        btns: {
+            fontSize: "15px",
+            background: `linear-gradient(to right, ${green.A700}, ${green[800]})`,
+            marginTop: "15px",
+            width: "-moz-available !important",
+            boxShadow: "2px !important",
+            borderRadius: "15px !important",
+            backgroundColor: "white !important",
         },
-        "& .css-2bxn45, .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-1jg2gny, .MuiInputBase-input.MuiFilledInput-input.css-2bxn45": {
-            background: "white !important",
-            boxShadow: "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-            borderRadius: "15px",
-            backgroundColor: "white"
+        diContent: {
+            paddingLeft: "640px !important",
+            paddingRight: "120px !important",
+            paddingTop: "80px !important",
+            backgroundImage: `url(${girl})`,
+            [theme.breakpoints.down('xs')]: {
+                paddingLeft: "24px !important",
+                paddingRight: "24px !important",
+                backgroundImage: "none !important"
+            },
+            [theme.breakpoints.down('sm')]: {
+                paddingLeft: "24px !important",
+                paddingRight: "24px !important",
+                backgroundImage: "none"
+            },
+            backgroundRepeat: "no-repeat !important",
+            backgroundSize: "contain !important",
         },
-        "& .css-2y464i-MuiInputBase-root-MuiFilledInput-root::before, .css-2y464i-MuiInputBase-root-MuiFilledInput-root::after": {
-            border: "none !important"
+        subtitle: {
+            fontSize: 15,
+            [theme.breakpoints.down('xs')]: {
+                fontSize: "14px !important",
+            },
+            [theme.breakpoints.down('sm')]: {
+                fontSize: "14px !important",
+            },
+            fontFamily: 'Lexend',
+            textAlign: 'left',
+            width: "70%",
+            color: "black"
         },
-        "& .css-1ady8eb-MuiContainer-root": {
-            height: '20px !important',
+        title: {
+            fontSize: 50,
+            [theme.breakpoints.down('xs')]: {
+                fontSize: "30px !important",
+            },
+            [theme.breakpoints.down('sm')]: {
+                fontSize: "30px !important",
+            },
+            fontFamily: 'Lexend',
             fontWeight: 800,
-            paddingLeft: "0 !important",
-            paddingRight: "0 !important",
+            textAlign: 'left',
+            width: "90%",
+            color: "black",
         },
-        "& .css-1jg2gny::before, .css-1jg2gny::after, .css-1jg2gny:hover:not(.Mui-disabled, .Mui-error)::before": {
-            border: "none !important"
-        },
-        
-    },
 
-    btns: {
-        fontSize: "15px",
-        background: `linear-gradient(to right, ${green.A700}, ${green[800]})`,
-        marginTop: "15px",
-        width: "-moz-available !important",
-        boxShadow: "2px !important",
-        borderRadius: "15px !important",
-        backgroundColor: "white !important",
-    },
-
-    title: {
-        fontSize: 50,
-        fontFamily: 'Lexend',
-        fontWeight: 800,
-        textAlign: 'left',
-        width: "90%",
-        color: "black"
-    },
-
-    subtitle: {
-        fontSize: 15,
-        fontFamily: 'Lexend',
-        textAlign: 'left',
-        width: "70%",
-        color: "black"
-    }
-})
+    };
+});
 
 
 function LandingPage() {
@@ -145,16 +148,7 @@ function LandingPage() {
                         <Typography
                             className={classes.title}
                             gutterBottom
-                            variant="h1" 
-                            sx={{
-                                fontSize: {
-                                    xs: 30,
-                                    sm: 30,
-                                    md: 50,
-                                    lg: 50,
-                                    xl: 50,
-                                }
-                            }}
+                            variant="h1"
                         >
                             Pinnacle of Business Telephony
                         </Typography>
@@ -162,15 +156,6 @@ function LandingPage() {
                             className={classes.subtitle}
                             variant="subtitle2"
                             gutterBottom
-                            sx={{
-                                fontSize: {
-                                    xs: 14,
-                                    sm: 14,
-                                    md: 15,
-                                    lg: 15,
-                                    xl: 15,
-                                }
-                            }}
                         >
                             Effortlessly manage all conversations and interact with clients
                             and teams using one powerful and user-friendly solution.
@@ -179,7 +164,7 @@ function LandingPage() {
                             variant="contained"
                             onClick={handleClickOpen}
                             className={classes.btns}
-                            >
+                        >
                             Get started
                         </Button>
 
@@ -196,48 +181,16 @@ function LandingPage() {
                                     position: 'absolute',
                                     right: 8,
                                     top: 8,
+                                    backgroundColor: "white",
                                     zIndex: 99999,
                                     color: (theme) => theme.palette.grey[500],
                                 }}
                             >
                                 <MemoCustomCloseIcon />
                             </IconButton>
-                            <DialogContent sx={{
-                                paddingLeft: {
-                                    xs: 3,
-                                    sm: 80,
-                                    md: 80,
-                                    lg: 80,
-                                    xl: 80,
-                                },
-                                backgroundRepeat: "no-repeat",
-                                backgroundSize: "contain",
-                                backgroundImage: {
-                                    xs: `none`,
-                                    sm: `none`,
-                                    md: `url(${girl})`,
-                                    lg: `url(${girl})`,
-                                    xl: `url(${girl})`,
-                                },
-                                paddingTop: 10,
-                                paddingRight: {
-                                    xs: 3,
-                                    sm: 15,
-                                    md: 15,
-                                    lg: 15,
-                                    xl: 15,
-                                },
-                            }}>
+                            <DialogContent className={classes.diContent}>
                                 <DialogContentText>
-                                    <Typography sx={{
-                                        fontSize: {
-                                            xs: 40,
-                                            sm: 40,
-                                            md: 50,
-                                            lg: 50,
-                                            xl: 50,
-                                        }
-                                    }} className={classes.title} variant="h1" gutterBottom>
+                                    <Typography className={classes.title} variant="h1" gutterBottom>
                                         Pinnacle of Business Telephony is in your hands
                                     </Typography>
                                 </DialogContentText>
@@ -249,34 +202,32 @@ function LandingPage() {
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} md={6} >
                                         <TextField
+                                            InputProps={{ disableUnderline: true }}
                                             autoFocus
                                             margin="dense"
                                             id="firstName"
                                             label="First Name"
                                             type="text"
                                             fullWidth
-                                            className={classes.root}
                                             variant="filled"
                                         />
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
-                                            autoFocus
                                             margin="dense"
                                             id="lastName"
                                             label="Last Name"
                                             type="text"
-                                            className={classes.root}
                                             fullWidth
                                             variant="filled"
+                                            InputProps={{ disableUnderline: true }}
                                         />
                                     </Grid>
                                     <Grid item xs={12} md={12}>
                                         <TextField
-                                            autoFocus
+                                            InputProps={{ disableUnderline: true }}
                                             margin="dense"
                                             id="phone"
-                                            className={classes.root}
                                             label="Phone"
                                             type="phone"
                                             fullWidth
@@ -285,11 +236,10 @@ function LandingPage() {
                                     </Grid>
                                     <Grid item xs={12} md={12}>
                                         <TextField
-                                            autoFocus
+                                            InputProps={{ disableUnderline: true }}
                                             margin="dense"
                                             id="text"
                                             type="Email"
-                                            className={classes.root}
                                             variant="filled"
                                             label="Email"
                                             fullWidth
@@ -301,10 +251,9 @@ function LandingPage() {
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
-                                            autoFocus
+                                            InputProps={{ disableUnderline: true }}
                                             margin="dense"
                                             id="text"
-                                            className={classes.root}
                                             label="Company name"
                                             type="text"
                                             fullWidth
@@ -313,10 +262,9 @@ function LandingPage() {
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
-                                            autoFocus
+                                            InputProps={{ disableUnderline: true }}
                                             margin="dense"
                                             id="employees"
-                                            className={classes.root}
                                             label="Number Of Employees"
                                             type="text"
                                             fullWidth
@@ -335,7 +283,7 @@ function LandingPage() {
                 <Grid item xs={12} md={6}>
                     <Box sx={{
                         width: {
-                            xs: "400px",
+                            xs: "350px",
                             sm: "450px",
                             md: "auto",
                             lg: "auto",
